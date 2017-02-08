@@ -6,7 +6,7 @@ MONTH=$(date +%m)
 DAY=$(date +%d)
 YEAR=20$(date +%y)
 
-PROJECT_NAME="simple"
+PROJECT_NAME="simple-project-name"
 USER_ID=$USER
 START_TIME="${YEAR}-${MONTH}-${DAY}T00:00Z" # T23:59Z"
 END_TIME="2030-12-31T00:00Z"
