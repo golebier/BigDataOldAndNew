@@ -2,7 +2,18 @@
   <start to="start_action"/>
   <action name="start_action">
     <shell xmlns="uri:oozie:shell-action:0.2">
-      ...
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property>
+          <name>mapred.job.queue.name</name>
+          <value>${queueName}</value>
+        </property>
+      </configuration>
+      <exec>${rootDir}/projectCoreScript.sh</exec>
+      <file>${rootDir}/projectCoreScript.sh#projectCoreScript.sh</file>
+      <file>Libs</file>
+      <file>Conf</file>
     </shell>
     <ok to="end"/>
     <error to="fail"/>
