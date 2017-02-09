@@ -42,3 +42,4 @@ oozie job \
 -D fs=$FS \
 -config ${PROJECT_NAME}/job.properties \
 -run -verbose
+# conf: cn be a coordinator.xml as well ;)
