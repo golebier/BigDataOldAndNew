@@ -1,3 +1,5 @@
+## first: do simple Spark-shell with sqoop/oozie/scala-spark-sql work, then move to full impl.
+
 # partitioned
 # not partitioned
 # joined =by map
