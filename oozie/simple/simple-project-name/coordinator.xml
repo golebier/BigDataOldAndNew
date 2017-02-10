@@ -1,1 +1,37 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
+<coordinator-app name="Simple-project-coordinator"
+                 frequency="${coord:days(1)}"
+                 start="${start_time}"
+                 end="${end_time}"
+                 timezone="UTC"
+                 xmlns="uri:oozie:coordinator:0.2">
+  <controls>
+    <timeout>${coord:hours(24)}</timeout>
+    <throttle>24</throttle>
+  </controls>
+  <action>
+    <workflow>
+      <app-path>${workflowPath}</app-path>
+      <property>
+        <name>nominalYear</name>
+        <value>${coord:formatTime(coord:dateOffcet(coord:nominalTime(), 0, 'HOUR'), 'yyyy')}</value>
+      </property>
+      <property>
+        <name>nominalMonth</name>
+        <value>${coord:formatTime(coord:dateOffcet(coord:nominalTime(), 0, 'HOUR'), 'MM')}</value>
+      </property>
+      <property>
+        <name>nominalDay</name>
+        <value>${coord:formatTime(coord:dateOffcet(coord:nominalTime(), 0, 'HOUR'), 'dd')}</value>
+      </property>
+      <property>
+        <name>nominalHour</name>
+        <value>${coord:formatTime(coord:dateOffcet(coord:nominalTime(), 0, 'HOUR'), 'HH')}</value>
+      </property>
+      <property>
+        <name>workflow_app_name</name>
+        <value>SimpleProjectName</value>
+      </property>
+    </workflow>
+  </action>
+</coordinator-app>
