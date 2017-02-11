@@ -15,6 +15,24 @@
       <file>Libs</file>
       <file>Conf</file>
     </shell>
+    <ok to="next_action"/>
+    <error to="fail"/>
+  </action>
+  <action name="next_action">
+    <shell xmlns="uri:oozie:shell-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property>
+          <name>mapred.job.queue.name</name>
+          <value>${queueName}</value>
+        </property>
+      </configuration>
+      <exec>${rootDir}/projectNextScript.sh</exec>
+      <file>${rootDir}/projectNextScript.sh#projectNextScript.sh</file>
+      <file>Libs</file>
+      <file>Conf</file>
+    </shell>
     <ok to="end"/>
     <error to="fail"/>
   </action>
